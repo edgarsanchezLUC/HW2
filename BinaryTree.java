@@ -230,6 +230,7 @@ public class BinaryTree {
         if (node == null) {
             return;
         }
+        // if current node is equal to old val, replace it w/ new val
         if (node.data == oldVal) {
             node.data == newVal;
         }
