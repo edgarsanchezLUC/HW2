@@ -1,6 +1,7 @@
 
 /*
  * *** PLACE YOUR NAME / SECTION HERE ***
+ * *** Edgar Sanchez / 002 ***
  *
  * Homework # 2 (Programming Assignment). This Java class defines a few basic
  * manipulation operations of a binary trees.
@@ -224,7 +225,18 @@ public class BinaryTree {
 
         // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
         // BINARY TREE (WHICH IS BASED ON RECURSION)
-
+        // check current node, then left, then right
+        // if node is null, we've reached the end. return
+        if (node == null) {
+            return;
+        }
+        if (node.data == oldVal) {
+            node.data == newVal;
+        }
+        // recurse left
+        replaceValueHelper(node.left, oldVal, newVal);
+        // recurse right
+        replaceValueHelper(node.right, oldVal, newVal);
     }
 
 
