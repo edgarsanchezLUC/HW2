@@ -259,9 +259,14 @@ public class BinaryTree {
 
         // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
         // BINARY TREE (WHICH IS BASED ON RECURSION)
-
-        return Integer.MAX_VALUE;
-    }
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        int LMin = findMinHelper(node.left);
+        int RMin = findMinHelper(node.right);
+        int min = math.min(node.data, math.min(LMin, RMin));
+        return min;
+        }
 
 
     /*
