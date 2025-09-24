@@ -232,7 +232,7 @@ public class BinaryTree {
         }
         // if current node is equal to old val, replace it w/ new val
         if (node.data == oldVal) {
-            node.data == newVal;
+            node.data = newVal;
         }
         // recurse left
         replaceValueHelper(node.left, oldVal, newVal);
