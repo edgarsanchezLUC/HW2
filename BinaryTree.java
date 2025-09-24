@@ -267,7 +267,7 @@ public class BinaryTree {
         // get the min of the right node
         int RMin = findMinHelper(node.right);
         // get the overall min of the main node and the left and right node
-        int min = math.min(node.data, math.min(LMin, RMin));
+        int min = Math.min(node.data, Math.min(LMin, RMin));
         // return the min
         return min;
         }
