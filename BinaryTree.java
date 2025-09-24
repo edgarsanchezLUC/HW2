@@ -344,14 +344,14 @@ public class BinaryTree {
         // COUNT LOCATIONS IN THE RETURNED ARRAY AS SHOWN BELOW, ELSE
         // THE 'SUM' IS RETURNED IN INDEX LOCATION 0, AND COUNT IS LOCATION 1
 
-        if (node == null) {
+        if (n == null) {
             return new int[]{0,0};
         }
         // check left and get the sum/count
-        int[] left = averageHelper(node.left);
-        int[] right = averageHelper(node.right);
+        int[] left = averageHelper(n.left);
+        int[] right = averageHelper(n.right);
 
-        int sum = node.data + left[0] + right[0];
+        int sum = n.data + left[0] + right[0];
         int count = 1 + left[1] + right[1];
 
         return new int[]{sum, count};
