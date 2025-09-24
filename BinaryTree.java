@@ -259,12 +259,16 @@ public class BinaryTree {
 
         // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
         // BINARY TREE (WHICH IS BASED ON RECURSION)
-        if (root == null) {
+        if (node == null) {
             return Integer.MAX_VALUE;
         }
+        // get the min of the left node
         int LMin = findMinHelper(node.left);
+        // get the min of the right node
         int RMin = findMinHelper(node.right);
+        // get the overall min of the main node and the left and right node
         int min = math.min(node.data, math.min(LMin, RMin));
+        // return the min
         return min;
         }
 
@@ -287,10 +291,21 @@ public class BinaryTree {
         // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
         // BINARY TREE (WHICH IS BASED ON RECURSION)
 
-        // RETURNING -1 IN THIS STUB, WHICH WILL FAIL ALL TESTS. REPLACE IT WITH YOUR CODE
+        if (node == null) {
+            return 0;
+        }
+        int count = 0;
+        // check the node data is greater than val
+        if (node.data > val) {
+            // increase the count
+            count++;
+        }
+        // add the returned integer of the left and right to the count
+        count += nodesGTHelper(node.left, val);
+        count += nodesGTHelper(node.right,val);
 
-
-        return -1;
+        // return the final count;
+        return count;
     }
 
 
@@ -329,6 +344,16 @@ public class BinaryTree {
         // COUNT LOCATIONS IN THE RETURNED ARRAY AS SHOWN BELOW, ELSE
         // THE 'SUM' IS RETURNED IN INDEX LOCATION 0, AND COUNT IS LOCATION 1
 
-        return new int[]{0, 0};
+        if (node == null) {
+            return new int[]{0,0};
+        }
+        // check left and get the sum/count
+        int[] left = averageHelper(node.left);
+        int[] right = averageHelper(node.right);
+
+        int sum = node.data + left[0] + right[0];
+        int count = 1 + left[1] + right[1];
+
+        return new int[]{sum, count};
     }
 }
